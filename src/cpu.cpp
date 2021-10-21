@@ -1,6 +1,7 @@
 #include "cpu.h"
 
 #include <iostream>
+#include <cstdint>
 
 
 CPU::CPU()
@@ -8,27 +9,23 @@ CPU::CPU()
     
 }
 
-void CPU::init(){ 
-
-    memoryMap[0x4015] = 0;  
-    memoryMap[0x4017] = 0; 
-
-    for(int i = 0x4000; i < 0x400F; i++)
-    {
-        memoryMap[i] = 0; 
-    }
-
-    for(int i = 0x4010; i < 0x4013; i++)
-    {
-        memoryMap[i] = 0; 
-    }
-
-    
-}
-
 void CPU::Decode(){
     while(true)
     {
-        
+
+        pc++; 
+
+        switch(op)
+        {
+
+        }
     }
+}
+
+void CPU::mem_read(){
+    bus.Read(); 
+}
+
+void CPU::mem_write(){
+
 }
